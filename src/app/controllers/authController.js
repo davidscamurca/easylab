@@ -113,6 +113,8 @@ router.post('/reset_password', async (req, res) => {
         if(token !== user.passwordResetToken)
             return res.status(400).send({ error: 'Token invalid'});
 
+        const now = new Date();
+        
         if ( now > user.passwordResetExpires)
             return res.status(400).send({ error: 'Token expired, generate a new one'});
 
@@ -123,6 +125,7 @@ router.post('/reset_password', async (req, res) => {
         res.send();
 
     } catch (err) {
+        //esta caindo sempre nesse error... verificar...
         res.status(400).send({ error: 'Cannot reset password, try again'});
     }
 });
