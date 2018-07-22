@@ -9,8 +9,7 @@ router.get('/', async (req, res) => {
         return res.send({ 
             "users":"http://192.168.0.21:3000/auth/",
             "reservation":"http://192.168.0.21:3000/reservation/",
-            "adm": ""
-        
+    
         })
 
     } catch (error) {
