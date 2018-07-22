@@ -114,7 +114,7 @@ router.post('/reset_password', async (req, res) => {
             return res.status(400).send({ error: 'Token invalid'});
 
         const now = new Date();
-        
+
         if ( now > user.passwordResetExpires)
             return res.status(400).send({ error: 'Token expired, generate a new one'});
 
@@ -130,4 +130,5 @@ router.post('/reset_password', async (req, res) => {
     }
 });
 
-module.exports = app => app.use('/auth', router);
+
+module.exports = app => app.use('/easy/api/v1/auth', router);

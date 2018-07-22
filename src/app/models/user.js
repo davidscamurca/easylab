@@ -10,12 +10,12 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         unique: true,
-        required: true,
+        require: true,
         lowercase: true,
     },
     password: {
         type: String,
-        required: true,
+        require: true,
         select: false,
     },
     passwordResetToken: {
@@ -27,9 +27,10 @@ const UserSchema = new mongoose.Schema({
         select: false,
     },
     isAdm: {
-        type: Boolean
-        require: true,
-    }
+        type: Boolean,
+        require: false,
+        default: false,
+    },
     createdAt: {
         type: Date,
         default: Date.now,      

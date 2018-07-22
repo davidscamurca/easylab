@@ -8,13 +8,9 @@ const LabSchema = new mongoose.Schema({
     isReserved: {
         type: Boolean,
         required: true,
-        //select: false,
+        default: false,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,      
-    }
-});
+},{ timestamps: true });
 
 const Lab = mongoose.model('Lab', LabSchema);
 
