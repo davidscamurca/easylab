@@ -8,6 +8,6 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 require('./app/controllers/index')(app);
 
-app.listen(3000);
+//app.listen(3000);
 
-console.log('Server run on: localhost:3000');
+//console.log('Server run on: localhost:3000');
