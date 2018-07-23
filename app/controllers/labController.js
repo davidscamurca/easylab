@@ -1,13 +1,13 @@
 
 const express = require('express');
 
-const authMiddleware = require('../middlewares/auth');
+//const authMiddleware = require('../middlewares/auth');
 
 const Lab = require('../models/Lab');
 
 const router = express.Router();
 
-router.use(authMiddleware);
+//router.use(authMiddleware);
 
 router.post('/register', async (req, res) => {
     const { name } =  req.body;
