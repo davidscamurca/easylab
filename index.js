@@ -8,6 +8,9 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 require('./app/controllers/index')(app);
 
+var porta = process.env.PORT || 8080;
+app.listen(porta);
+
 //app.listen(3000);
 
 //console.log('Server run on: localhost:3000');
