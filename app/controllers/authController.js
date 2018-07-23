@@ -131,4 +131,15 @@ router.post('/reset_password', async (req, res) => {
 });
 
 
+// Rota de listagem completa
+router.get('/', async (req, res) => {
+    try {
+        const users = await User.find();
+        return res.send({ users })
+
+    } catch (error) {
+        return res.status(400).send({ error: 'Error list users'});
+    }
+});
+
 module.exports = app => app.use('/easy/api/v1/auth', router);
