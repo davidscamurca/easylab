@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 
             "reservation": "https://projetosinformacao.herokuapp.com/easy/api/v1/reservation/",
 
-            "administration": "https://projetosinformacao.herokuapp.com/easy/api/v1/easy/api/v1/administration"    
+            "administration": "https://projetosinformacao.herokuapp.com/easy/api/v1/administration"    
         })
     } catch (error) {
         return res.status(400).send({ error: 'Error list endpoints API_EasyLab'});
