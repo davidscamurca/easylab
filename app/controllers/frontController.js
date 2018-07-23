@@ -5,13 +5,13 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-        
         return res.send({ 
-            "users":"http://192.168.0.21:3000/auth/",
-            "reservation":"http://192.168.0.21:3000/reservation/",
-    
-        })
+            "users": "https://projetosinformacao.herokuapp.com/easy/api/v1/auth/",
 
+            "reservation": "https://projetosinformacao.herokuapp.com/easy/api/v1/reservation/",
+
+            "administration": "https://projetosinformacao.herokuapp.com/easy/api/v1/easy/api/v1/administration"    
+        })
     } catch (error) {
         return res.status(400).send({ error: 'Error list endpoints API_EasyLab'});
     }
