@@ -2,14 +2,14 @@
 const express = require ('express');
 
 //Para usar o token devo descomentar
-const authMiddleware = require('../middlewares/auth');
+//const authMiddleware = require('../middlewares/auth');
 
 const Reservation = require('../models/Reservation');
 
 const router = express.Router();
 
 //Para usar o token devo descomentar
-router.use(authMiddleware);
+//router.use(authMiddleware);
 
 
 router.post('/register', async (req, res) => {
