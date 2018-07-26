@@ -24,7 +24,6 @@ router.post('/register', async (req, res) => {
 
         //na hora da reserva, estou pegando o usuario autenticado !!!
         const reservation = await Reservation.create({ ...req.body, user: req.userId});
-
         return res.send({ 
             reservation,
         });
@@ -38,8 +37,11 @@ router.post('/register', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const reservations = await Reservation.find().populate('user');
+        
+        res.header('Access-Control-Allow-Origin', '*');
+        
         return res.send({ reservations })
-
+        
     } catch (error) {
         return res.status(400).send({ error: 'Error list reservations'});
     }
