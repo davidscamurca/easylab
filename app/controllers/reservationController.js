@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
 // Rota listagem por ID
 router.get('/:reservationId', async (req, res) => {
     try {
-        const reservation = await Reservation.findById(req.params.reservationId).populate('user');
+        const reservation = await Reservation.findById(req.params.reservationId).populate('laboratory').populate('user');
         return res.send({ reservation })
 
     } catch (error) {
@@ -104,3 +104,4 @@ module.exports = app => app.use('/easy/api/v1/reservation', router, function(res
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
     next();
 });
+
