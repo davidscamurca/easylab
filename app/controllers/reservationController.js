@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
     try {
         const reservations = await Reservation.find().populate('user');
         
-        res.header('Access-Control-Allow-Origin', '*');
+        //res.header('Access-Control-Allow-Origin', '*');
         
         return res.send({ reservations })
         
@@ -96,9 +96,11 @@ router.options("*", function(req, res, next){
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
     next();
-    res.status(200);
-    //res.send(200);
 });
 
-
-module.exports = app => app.use('/easy/api/v1/reservation', router);
+module.exports = app => app.use('/easy/api/v1/reservation', router, function(res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    next();
+});
