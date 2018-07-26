@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
     try {
         const reservations = await Reservation.find().populate('user').populate('laboratory');
         
-        //res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Origin', '*');
         
         return res.send({ reservations })
         
