@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
 // Rota de listagem completa
 router.get('/', async (req, res) => {
     try {
-        const reservations = await Reservation.find().populate('user');
+        const reservations = await Reservation.find().populate('user').populate('laboratory');
         
         //res.header('Access-Control-Allow-Origin', '*');
         
@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
 // Rota listagem por ID
 router.get('/:reservationId', async (req, res) => {
     try {
-        const reservation = await Reservation.findById(req.params.reservationId).populate('laboratory').populate('user');
+        const reservation = await Reservation.findById(req.params.reservationId).populate('user').populate('laboratory');
         return res.send({ reservation })
 
     } catch (error) {
