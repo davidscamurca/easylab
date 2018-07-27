@@ -58,6 +58,8 @@ router.post('/authenticate', async (req, res) => {
         expiresIn: 86400,
     });
 
+    res.header('Access-Control-Allow-Origin', '*');
+    
     res.send({ 
         user, 
         token: generateToken({ id: user.id}), 
@@ -145,4 +147,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-module.exports = app => app.use('/easy/api/v1/auth', router);
+module.exports = app => app.use('/easy/api/v1/auth', router, function(res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    next();
+});
