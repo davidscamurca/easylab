@@ -14,5 +14,5 @@ app.use(function(req, res, next) {
 
 require('./app/controllers/index')(app);
 
-var porta = process.env.PORT || 8080;
+var porta = process.env.PORT || 3333;
 app.listen(porta);
