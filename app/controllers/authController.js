@@ -19,7 +19,9 @@ function generateToken(params = {}){
 
 router.post('/register', async (req, res) => {
     const { email } =  req.body;
-
+    
+    res.header('Access-Control-Allow-Origin', '*');
+    
     try {
         if (await User.findOne({ email }))
             return res.status(400).send({ error: 'User alredy exists'});
@@ -32,7 +34,8 @@ router.post('/register', async (req, res) => {
         
         return res.send({ 
             user,
-            token: generateToken({ id: user.id}),  
+            token: generateToken({ id: user.id}),
+            header:('Access-Control-Allow-Origin', '*'),   
         });
         
 
