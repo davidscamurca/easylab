@@ -46,15 +46,41 @@ router.get('/labId', async (req, res) => {
     res.send({user: req.userId});
 });
 
+
 // Rota para atualizar por ID
 router.put('/labId', async (req, res) => {
     res.send({user: req.userId});
 });
 
 //Rota para deletar por ID
-router.delete('/labId', async (req, res) => {
-    res.send({user: req.userId});
+router.delete('/:laboratoryId', async (req, res) => {
+    try {
+        await Lab.findByIdAndRemove(req.params.laboratoryId);
+        return res.send();
+
+    } catch (error) {
+        return res.status(400).send({ error: 'Error deleting laboratory'});
+    }
 });
+
+// Atualiza dados do laboratorio.
+router.put('/:laboratoryId', async (req, res) => {
+    try {
+        const { name } =  req.body;
+
+        const laboratory = await Lab.findByIdAndUpdate(req.params.laboratoryId, {
+            name
+        }, {new : true});
+
+        return res.send({ 
+            laboratory,
+        });
+
+    } catch (err) {
+        return res.status(400).send({ error: 'Reserve updating failed'});
+    }
+});
+
 
 module.exports = app => app.use('/easy/api/v1/administration', router, function(res, next){
     res.header('Access-Control-Allow-Origin', '*');

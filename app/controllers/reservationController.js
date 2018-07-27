@@ -69,27 +69,24 @@ router.delete('/:reservationId', async (req, res) => {
     }
 });
 
-// router.put('/:reservationId', async (req, res) => {
-//     const { laboratory } =  req.body;
+// Atualiza os dados da reserva: que pode ser DATA e OBSERVACOES
+router.put('/:reservationId', async (req, res) => {
+    try {
+        const { observations, data } =  req.body;
 
-//     try {
-//         if (await Reservation.findOne({ laboratory }))
-//             return res.status(400).send({ error: 'This lab is reserved'});
+        const reservation = await Reservation.findByIdAndUpdate(req.params.reservationId, {
+            observations,
+            data
+        }, {new : true});
 
-//         // Await porque e uma requisicao assyncrona, ira retornar uma!
-//         // Ppromisse 
+        return res.send({ 
+            reservation,
+        });
 
-//         //na hora da reserva, estou pegando o usuario autenticado !!!
-//         const reservation = await Reservation.create({ ...req.body, user: req.userId});
-
-//         return res.send({ 
-//             reservation,
-//         });
-
-//     } catch (err) {
-//         return res.status(400).send({ error: 'Reserve registration failed'});
-//     }
-// });
+    } catch (err) {
+        return res.status(400).send({ error: 'Reserve updating failed'});
+    }
+});
 
 router.options("*", function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');

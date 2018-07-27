@@ -27,11 +27,14 @@ router.post('/register', async (req, res) => {
         const user = await User.create(req.body);
 
         user.password = undefined;
-
+        
+        res.header('Access-Control-Allow-Origin', '*');
+        
         return res.send({ 
             user,
             token: generateToken({ id: user.id}),  
         });
+        
 
     } catch (err) {
         return res.status(400).send({ error: 'Registration failed'});
