@@ -15,7 +15,7 @@
 
 # Heroku - Acesse agora mesmo esta API online
 
-Opção 1: [Heroku](http://projetosinformacao.herokuapp.com/easy/api/v1)
+Opção 1: [Heroku](http://projetosinformacao.herokuapp.com/easy/api/v1)<br>
 Opção 2: http://projetosinformacao.herokuapp.com/easy/api/v1
 
 # Exemplo - GET
@@ -39,8 +39,8 @@ Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
 
 ```json
 {
-	"name": "Leviny Oasis",
-	"email": "levenyo@gmail.com",
-	"password": "123456",
-}```
-
+  "name": "Leviny Oasis",
+  "email": "levenyo@gmail.com",
+  "password": "123456",
+}
+```
