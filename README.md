@@ -43,3 +43,33 @@ Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
   "password": "123456",
 }
 ```
+
+# Exemplo - PATCH
+```json
+{
+}
+```
+
+# Exemplo - PUT
+
+Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b591597fe686b404a74c213`com o verbo `PUT`
+
+```json
+{
+  "name": "Novo nome do Laboratório"
+}
+```
+
+# Exemplo - DELETE
+```json
+{
+}
+```
+
+
+# Exemplo - OPTIONS
+```json
+{
+}
+```
+
