@@ -29,7 +29,6 @@ Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
   "name": "Fucapi",
   "email": "fucapi@gmail.com",
   "createdAt": "2018-07-22T22:14:27.813Z",
-  __v: 0
 }
 ```
 
