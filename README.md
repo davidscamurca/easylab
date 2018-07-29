@@ -13,9 +13,14 @@
 | PATCH   | /auth/id<br>/reservation/id<br>/administration/id<br> | Atualiza alguns campos por ID   |
 | OPTIONS | /auth/id<br>/reservation/id<br>/administration/id<br> | Mostra as operações que o recursos pode realizar |
 
+# Heroku - Acesse agora mesmo esta API online
+
+Opção 1: [Heroku](http://projetosinformacao.herokuapp.com/easy/api/v1)
+Opção 2: http://projetosinformacao.herokuapp.com/easy/api/v1
+
 # Exemplo - GET
 
-Para user este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/` com o vebo `GET`
+Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/` com o vebo `GET`.
 
 ```json
 {
@@ -27,3 +32,15 @@ Para user este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
   __v:  0
 }
 ```
+
+# Exemplo - POST
+
+Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/register` com o vebo `POST`.
+
+```json
+{
+	"name": "Leviny Oasis",
+	"email": "levenyo@gmail.com",
+	"password": "123456",
+}```
+
