@@ -12,3 +12,16 @@
 | DELETE  | /auth/id<br>/reservation/id<br>/administration/id<br> | Delete por ID |
 | PATCH   | /auth/id<br>/reservation/id<br>/administration/id<br> | Atualiza alguns campos por ID   |
 | OPTIONS | /auth/id<br>/reservation/id<br>/administration/id<br> | Mostra as operações que o recursos pode realizar |
+
+# Exemplo - GET
+
+```json
+{
+  isAdm	true
+  _id	"5b5501c32b957b144f50300e"
+  name	"Fucapi"
+  email	"fucapi@gmail.com"
+  createdAt	"2018-07-22T22:14:27.813Z"
+  __v	0
+}
+```
