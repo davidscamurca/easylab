@@ -20,7 +20,7 @@ Opção 2: http://projetosinformacao.herokuapp.com/easy/api/v1
 
 # Exemplo - GET
 
-Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/` com o vebo `GET`.
+Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/` com o verbo `GET`.
 
 ```json
 {
@@ -34,7 +34,7 @@ Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
 
 # Exemplo - POST
 
-Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/register` com o vebo `POST`.
+Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/auth/register` com o verbo `POST`.
 
 ```json
 {
