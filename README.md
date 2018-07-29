@@ -19,7 +19,7 @@ Para user este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
 
 ```json
 {
-  isAdm:  true
+  isAdm: true
   _id:  "5b5501c32b957b144f50300e"
   name: "Fucapi"
   email:  "fucapi@gmail.com"
