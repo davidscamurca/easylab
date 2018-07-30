@@ -33,7 +33,7 @@ router.post('/register', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const labs = await Lab.find();
-        return res.send({ labs })
+        return res.send({ labs });
 
     } catch (error) {
         return res.status(400).send({ error: 'Error list labs'});
@@ -44,8 +44,8 @@ router.get('/', async (req, res) => {
 // Rota de listagem por ID
 router.get('/:laboratoryId', async (req, res) => {
     try {
-        const laboratory = await Lab.findById(req.params.laboratoryId)
-        return res.send({ laboratory })
+        const laboratory = await Lab.findById(req.params.laboratoryId);
+        return res.send({ laboratory });
 
     } catch (error) {
         return res.status(400).send({ error: 'Error list laboratory'});
@@ -121,4 +121,6 @@ router.options('/options', (req, res) => {
     
 });
 
+
 module.exports = app => app.use('/easy/api/v1/administration', router);
+
