@@ -67,7 +67,7 @@ Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b5
 
 # Exemplo - DELETE
 
-Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/administration/5b55108a986387175d0009fa` com o verbo `DELETE`.
+Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/administration/5b55108e986387175d0009fc` com o verbo `DELETE`.
 
 ```
 {
