@@ -11,7 +11,7 @@
 | PUT     | /auth/id<br>/reservation/id<br>/administration/id<br> | Atualiza todos os campos por ID |
 | DELETE  | /auth/id<br>/reservation/id<br>/administration/id<br> | Delete por ID |
 | PATCH   | /auth/id<br>/reservation/id<br>/administration/id<br> | Atualiza alguns campos por ID   |
-| OPTIONS | /auth/id<br>/reservation/id<br>/administration/id<br> | Mostra as operações que o recursos pode realizar |
+| OPTIONS | /auth<br>/reservation<br>/administration<br> | Mostra as operações que o recursos pode realizar |
 
 # Heroku - Acesse agora mesmo esta API online
 
