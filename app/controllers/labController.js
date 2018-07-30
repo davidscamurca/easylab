@@ -103,7 +103,7 @@ router.patch('/:laboratoryId', async (req, res) => {
         });
 });
 
-router.options('*', (req, res) => {
+router.options('/options', (req, res) => {
     
      options = {  
         url: 'https://jsonplaceholder.typicode.com/posts',
@@ -117,7 +117,7 @@ router.options('*', (req, res) => {
 
     var resutado = JSON.parse(options);
 
-    res.exec().json(resutado);
+    res.json(resutado);
     
 });
 
