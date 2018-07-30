@@ -46,18 +46,18 @@ Para usar este recurso utilize `https://projetosinformacao.herokuapp.com/easy/ap
 
 # Exemplo - PATCH
 
-Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b591597fe686b404a74c213 com o verbo `PATCH`
+Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b591597fe686b404a74c213` com o verbo `PATCH`.
 
 ```json
 [
-	{"propName": "name", "value": "Atualizado com o method PATCH" },
-	{"propName": "isReserved", "value": true }
+  {"propName": "name", "value": "Atualizado com o method PATCH" },
+  {"propName": "isReserved", "value": true }
 ]
 ```
 
 # Exemplo - PUT
 
-Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b591597fe686b404a74c213`com o verbo `PUT`
+Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b591597fe686b404a74c213`com o verbo `PUT`.
 
 ```json
 {
