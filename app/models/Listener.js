@@ -5,7 +5,7 @@ const ListenerSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    reserveId: {
+    class: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Reservation',
         require: true
