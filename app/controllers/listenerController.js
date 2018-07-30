@@ -82,23 +82,16 @@ router.delete('/:listenerId', async (req, res) => {
     }
 });
 
-// Mostra as opções disponíveis na rota
-router.options('*', (req, res) => {
-    
-    options = {  
-       url: 'http://projetosinformacao.herokuapp.com/easy/api/v1/listener',
-       method: 'GET',
-       method: 'POST',
-       method: 'PUT',
-       method: 'PATCH',
-       method: 'DELETE',
-       method: 'OPTIONS'
-   };
+router.options('/', (req, res) => {
 
-   var resutado = JSON.parse(options);
+    return res.send({ 
+        "listener": {
+            "recurso": "https://projetosinformacao.herokuapp.com/easy/api/v1/listener",
+            "metodos": "GET, POST, PUT, PATCH, DELETE, OPTIONS" 
+        }
+        });
 
-   res.json(resutado);
-   
 });
+
 
 module.exports = app => app.use('/easy/api/v1/listener', router);

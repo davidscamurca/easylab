@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 // const authMiddleware = require('../middlewares/auth');
 
@@ -83,22 +84,8 @@ router.delete('/:suggestionId', async (req, res) => {
 });
 
 // Mostra as opções disponíveis na rota
-router.options('*', (req, res) => {
-    
-    options = {  
-       url: 'http://projetosinformacao.herokuapp.com/easy/api/v1/suggestion',
-       method: 'GET',
-       method: 'POST',
-       method: 'PUT',
-       method: 'PATCH',
-       method: 'DELETE',
-       method: 'OPTIONS'
-   };
-
-   var resutado = JSON.parse(options);
-
-   res.json(resutado);
-   
+router.options('/', function(){
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,PATCH,DELETE,OPTIONS');
 });
 
 module.exports = app => app.use('/easy/api/v1/suggestion', router);

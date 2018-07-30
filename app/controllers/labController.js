@@ -103,22 +103,9 @@ router.patch('/:laboratoryId', async (req, res) => {
         });
 });
 
-router.options('/options', (req, res) => {
-    
-     options = {  
-        url: 'https://jsonplaceholder.typicode.com/posts',
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Accept-Charset': 'utf-8',
-            'User-Agent': 'my-reddit-client'
-        }
-    };
-
-    var resutado = JSON.parse(options);
-
-    res.json(resutado);
-    
+// Mostra as opções disponíveis na rota
+router.options('/', function(){
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,PATCH,DELETE,OPTIONS');
 });
 
 

@@ -126,7 +126,6 @@ router.post('/reset_password', async (req, res) => {
         res.send();
 
     } catch (err) {
-        //esta caindo sempre nesse error... verificar...
         res.status(400).send({ error: 'Cannot reset password, try again'});
     }
 });
@@ -141,6 +140,51 @@ router.get('/', async (req, res) => {
     } catch (error) {
         return res.status(400).send({ error: 'Error list users'});
     }
+});
+
+
+// Atualizar dados do usuario
+router.patch('/:userId', async (req, res) => {
+   
+    const id = req.params.userId;
+    const updateOps = {};
+
+    for (const ops of req.body) {
+        updateOps[ops.propName] = ops.value;
+    }
+
+    User.update({ _id: id}, {$set: updateOps})
+    .exec()
+    .then(result => {
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        res.status(400);
+    });
+});
+
+
+//Atualiza os campos do usuario
+router.put('/:userId', async (req, res) => {
+    try {
+        const { name, email, password, isAdm } =  req.body;
+
+        const user = await User.findByIdAndUpdate(req.params.reservationId, {
+            name, email, password, isAdm
+        }, {new : true});
+
+        return res.send({ 
+            user,
+        });
+
+    } catch (err) {
+        return res.status(400).send({ error: 'User updating failed'});
+    }
+});
+
+// Mostra as opções disponíveis na rota
+router.options('/', function(){
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,PATCH,DELETE,OPTIONS');
 });
 
 module.exports = app => app.use('/easy/api/v1/auth', router);

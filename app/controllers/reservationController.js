@@ -105,12 +105,10 @@ router.patch('/:reservationId', async (req, res) => {
     });
 });
 
-router.options("*", function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    next();
+// Mostra as opções disponíveis na rota
+router.options('/', function(){
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,PATCH,DELETE,OPTIONS');
 });
-
+    
 module.exports = app => app.use('/easy/api/v1/reservation', router);
 
