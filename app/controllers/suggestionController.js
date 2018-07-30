@@ -1,12 +1,12 @@
 const express = require('express');
 
-const authMiddleware = require('../middlewares/auth');
+// const authMiddleware = require('../middlewares/auth');
 
 const Suggestion = require('../models/Suggestion');
 
 const router = express.Router();
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 
 // Rota para registrar
 router.post('/register', async (req, res) => {
