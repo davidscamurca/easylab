@@ -86,6 +86,25 @@ router.put('/:reservationId', async (req, res) => {
     }
 });
 
+router.patch('/:reservationId', async (req, res) => {
+   
+    const id = req.params.reservationId;
+    const updateOps = {};
+
+    for (const ops of req.body) {
+        updateOps[ops.propName] = ops.value;
+    }
+
+    Lab.update({ _id: id}, {$set: updateOps})
+    .exec()
+    .then(result => {
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        res.status(400);
+    });
+});
+
 router.options("*", function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');

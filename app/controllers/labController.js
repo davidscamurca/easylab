@@ -42,15 +42,16 @@ router.get('/', async (req, res) => {
 
 
 // Rota de listagem por ID
-router.get('/labId', async (req, res) => {
-    res.send({user: req.userId});
+router.get('/:laboratoryId', async (req, res) => {
+    try {
+        const laboratory = await Lab.findById(req.params.laboratoryId)
+        return res.send({ laboratory })
+
+    } catch (error) {
+        return res.status(400).send({ error: 'Error list laboratory'});
+    }
 });
 
-
-// Rota para atualizar por ID
-router.put('/labId', async (req, res) => {
-    res.send({user: req.userId});
-});
 
 //Rota para deletar por ID
 router.delete('/:laboratoryId', async (req, res) => {
@@ -66,20 +67,58 @@ router.delete('/:laboratoryId', async (req, res) => {
 // Atualiza dados do laboratorio.
 router.put('/:laboratoryId', async (req, res) => {
     try {
-        const { name } =  req.body;
+        const { name, isReserved } =  req.body;
 
         const laboratory = await Lab.findByIdAndUpdate(req.params.laboratoryId, {
-            name
+            name,
+            isReserved
         }, {new : true});
 
         return res.send({ 
             laboratory,
         });
 
-    } catch (err) {
-        return res.status(400).send({ error: 'Reserve updating failed'});
+    } catch (error) {
+        return res.status(400).send({ error: 'Laboratory updating failed'});
     }
 });
 
+// Atualiza dados do laboratorio.
+router.patch('/:laboratoryId', async (req, res) => {
+   
+        const id = req.params.laboratoryId;
+        const updateOps = {};
+
+        for (const ops of req.body) {
+            updateOps[ops.propName] = ops.value;
+        }
+
+        Lab.update({ _id: id}, {$set: updateOps})
+        .exec()
+        .then(result => {
+            res.status(200).json(result);
+        })
+        .catch(err => {
+            res.status(400);
+        });
+});
+
+router.options('*', (req, res) => {
+    
+     options = {  
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Accept-Charset': 'utf-8',
+            'User-Agent': 'my-reddit-client'
+        }
+    };
+
+    var resutado = JSON.parse(options);
+
+    res.exec().json(resutado);
+    
+});
 
 module.exports = app => app.use('/easy/api/v1/administration', router);
