@@ -69,7 +69,7 @@ Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/5b5
 
 Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/administration/5b55108e986387175d0009fc` com o verbo `DELETE`.
 
-```
+```json
 {
   "":"Esse método não precisa de um corpo pra funcionar, bastar informar o ID pela URL(recurso) que o mesmo será deletado."
 }
