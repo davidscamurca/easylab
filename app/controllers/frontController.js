@@ -8,28 +8,28 @@ router.get('/', async (req, res) => {
         res.send({
 
         "auth": {
-                "recurso": "https://projetosinformacao.herokuapp.com/easy/api/v1/auth/",
-                "metodos": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+            "resource": "https://projetosinformacao.herokuapp.com/easy/api/v1/auth/",
+            "method": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
         },
 
         "reservation": {
-            "recurso": "https://projetosinformacao.herokuapp.com/easy/api/v1/reservation/",
-            "metodos": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+            "resource": "https://projetosinformacao.herokuapp.com/easy/api/v1/reservation/",
+            "method": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
         },
 
         "administration": {
-            "recurso": "https://projetosinformacao.herokuapp.com/easy/api/v1/administration/",
-            "metodos": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+            "resource": "https://projetosinformacao.herokuapp.com/easy/api/v1/administration/",
+            "method": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
         },
 
         "listener": {
-            "recurso": "https://projetosinformacao.herokuapp.com/easy/api/v1/listener/",
-            "metodos": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+            "resource": "https://projetosinformacao.herokuapp.com/easy/api/v1/listener/",
+            "method": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
         },
 
         "suggestion": {
-            "recurso": "https://projetosinformacao.herokuapp.com/easy/api/v1/suggestion/",
-            "metodos": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+            "resource": "https://projetosinformacao.herokuapp.com/easy/api/v1/suggestion/",
+            "method": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
         },
 
         });
