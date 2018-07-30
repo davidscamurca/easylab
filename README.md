@@ -79,6 +79,25 @@ Utilize `https://projetosinformacao.herokuapp.com/easy/api/v1/administration/adm
 # Exemplo - OPTIONS
 ```json
 {
+"auth":	
+  "resource":	"https://projetosinformacao.herokuapp.com/easy/api/v1/auth/",
+  "method":	"GET, POST, PUT, PATCH, DELETE, OPTIONS"
+
+"reservation":	
+ "resource":  "https://projetosinformacao.herokuapp.com/easy/api/v1/reservation/",
+ "method":  "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+
+"administration":	
+  "resource":  "https://projetosinformacao.herokuapp.com/easy/api/v1/administration/",
+  "method":  "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+
+"listener":	
+  "resource":  "https://projetosinformacao.herokuapp.com/easy/api/v1/listener/",
+  "method":  "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+
+"suggestion"	
+  "resource": "https://projetosinformacao.herokuapp.com/easy/api/v1/suggestion/",
+  "method": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
 }
 ```
 
