@@ -6,12 +6,12 @@
 # Documentação
 | Verbo   | Caminho/Recurso | Ação |
 | ------- | --------------- |------- |
-| GET     | /auth<br>/reservation<br>/administration<br> | Mostra todos |  
-| POST    | /auth<br>/reservation<br>/administration<br> | Cria um novo registro  |
-| PUT     | /auth/id<br>/reservation/id<br>/administration/id<br> | Atualiza todos os campos por ID |
-| DELETE  | /auth/id<br>/reservation/id<br>/administration/id<br> | Delete por ID |
-| PATCH   | /auth/id<br>/reservation/id<br>/administration/id<br> | Atualiza alguns campos por ID   |
-| OPTIONS | /auth<br>/reservation<br>/administration<br> | Mostra as operações que o recursos pode realizar |
+| GET     | /auth<br>/reservation<br>/administration<br>/listener<br>/suggestion<br> | Mostra todos |  
+| POST    | /auth<br>/reservation/register<br>/administration/register<br>/listener/register<br>/suggestion/register<br> | Cria um novo registro  |
+| PUT     | /auth/id<br>/reservation/id<br>/administration/id<br>/listener/id<br>/suggestion/id<br> | Atualiza todos os campos por ID |
+| DELETE  | /auth/id<br>/reservation/id<br>/administration/id<br>/listener/id<br>/suggestion/id<br> | Delete por ID |
+| PATCH   | /auth/id<br>/reservation/id<br>/administration/id<br>/listener/id<br>/suggestion/id<br> | Atualiza alguns campos por ID   |
+| OPTIONS | /auth<br>/reservation<br>/administration<br>/listener/<br>/suggestion/<br> | Mostra as operações que o recursos pode realizar |
 
 # Heroku - Acesse agora mesmo esta API online
 
